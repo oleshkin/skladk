@@ -1,0 +1,151 @@
+body {
+  padding-top: 50px;
+}
+
+.add {
+	width: 300px;
+}
+
+.grayss {
+	background-color: #fefefe;
+	font-color: red;
+}
+
+.rrow {
+	border: 1px solid black;
+}
+
+/* old */
+/*main.css for ADK trans*/
+
+#form {
+    display: none;
+     width: 100%;
+}
+
+.yellow {
+    background: rgb(253,216,0);
+    width: 40px;
+}
+.red {
+    background: red;
+    width: 40px;
+}
+.white {
+    background: rgb(255,255,255);
+    width: 40px;
+}
+.blue {
+    background: rgb(80,169,249);
+    width: 40px;
+}
+
+.success {
+    border: 1px solid rgb(100,240,0);
+}
+
+/*#add_invoice_out {
+    float: right;
+}*/
+
+#invoice_out_div {
+    float: right; 
+}
+
+#delete_products_div {
+    float: right;   
+}
+.filters_dates, .filters_radios, .filter_types, .filters_button {
+    float: left;
+}
+.filters_dates {
+    width: 280px;
+}
+.filters_radios {
+    margin: 20px 0 0 0;
+    width: 150px;
+}
+.filter_types {
+    margin: 20px 0 0 0;
+    width: 150px;
+}
+.filters_button {
+    margin: 15px 0 0 0;
+}
+.filters_button button {
+    height: 100px;
+}
+.no_file {
+    background: url("../img/add_file.png") 50% 50% no-repeat;
+    cursor: pointer;
+}
+.file_on {
+    background: url("../img/file_on.png") 50% 50% no-repeat;
+    cursor: pointer;
+}
+.format {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(65,65,65,0.4);
+    text-transform: uppercase;
+}
+.shim {
+    background: rgba(0,0,0,0.5);
+    display: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000); /* IE6â€“IE8 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto; 
+    -webkit-overflow-scrolling: touch;
+    z-index: 99;
+}
+.shim > * {
+    -webkit-transform: translateZ(0px);
+}
+.popup {
+    background: #fff;
+    -webkit-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-bottomright: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    position: fixed;
+    width: 500px;
+    height: 110px;
+    z-index: 101;
+    top: -300px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 40px 20px;
+}
+#file-input {
+    width: 400px;
+    margin-bottom: 30px;
+    float: left;
+    -webkit-align-items: baseline;
+color: inherit;
+}
+#add-file-btn {
+    float: right;
+}
+#download-file {
+    display: none;
+}
+.close-popup {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 26px;
+    color: rgb(224, 126, 126);
+}
+#remove-file {
+    display: none;
+    float: right; 
+    margin-top: 10px;
+}
