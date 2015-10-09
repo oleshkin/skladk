@@ -11,20 +11,30 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-
-
-    <link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css"/>
-    <link href="css/jquery.ui.tabs.css" rel="stylesheet" type="text/css"/>
-
-    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
     <link href="css/style2.css" rel="stylesheet">
-    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
 
+
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.9.1.custom.min.css" />
+                              <script type="text/javascript" src="js/jquery-1.8.2.js" charset="utf-8"></script>
+                              <script type="text/javascript" src="js/jquery-ui-1.9.1.custom.min.js" charset="utf-8"></script>
+                              <script type="text/javascript" src="js/jquery-ui-i18n.min.js" charset="utf-8"></script>
+	  <script type="text/javascript" charset="utf-8">
+		  jQuery( document ).ready( function() {
+		    jQuery.datepicker.setDefaults (
+		      jQuery.extend( jQuery.datepicker.regional[ '' ] )
+		    );
+		    jQuery( '#dateIn' ).datepicker({
+		    	dateFormat: "dd.mm.yy"
+		    });
+		    
+		   
+		  });
+		 
+		 //  $( "#dateIn" ).datepicker({
+  	// 		dateFormat: "yy-mm-dd"
+			// });
+			
+		</script>
 
   </head>
 
@@ -36,10 +46,152 @@
 
   <form action="/">
     <hr>
-    <table class="addTable"
-    <div><label>Дата прихода</label>
-    <label id="icon" for="name"><i class="fa fa-sign-in"></i></label>
-    <input type="text" name="dateIn" id="name" placeholder="dateIn" required/>
+    <table class="addTable">
+    <tr>
+	    <td>
+	    	 <label>Дата прихода</label>
+	   </td>
+	   <td>
+	   			<label id="icon" for="name"><i class="fa fa-sign-in"></i></label>
+    			<input type="text" name="dateIn" id="dateIn" required/>
+	    </td>
+	    <td>
+	    	<label>Дата ухода</label>
+	    </td>
+	   	<td>
+    		<label id="icon" for="name"><i class="fa fa-share-square-o"></i></i></label>
+    		<input type="text" name="dateOut" id="dateOut" required/><br>
+	    </td>
+    </tr>
+ 
+
+
+    <tr>
+	    <td>
+	    	<label>Клиент</label>
+	    </td>
+	   	<td>
+	    	<label id="icon" for="name"><i class="fa fa-user"></i></label>
+	    	<select type="select">
+	    		<option>1 Саныч</option>
+	    		<option>2 Измайлов SVRT</option>
+	    		<option>3 Aktuelle</option>
+	   			<option>4 Ростов Monatech</option>
+	   			<option>5 АДК</option>
+	   			<option>6 Куваг</option>
+	   			<option>7 Леон</option>
+	   			<option>8 Куваг</option>
+	   			<option>9 Антон</option>
+	   			<option>0 Николай</option>
+	   			<option>-- Добавить --</option>
+    		</select>
+	    </td>
+	    <td>
+	    	<label>Склад</label>
+	    </td>
+	   	<td>
+    		<label id="icon" for="name"><i class="fa fa-cubes"></i></label>
+  		  <input type="text" name="warehouse" id="warehouse" placeholder="Sklad" value="ADK" required/>
+	    </td>
+    </tr>
+
+    <tr>
+	    <td>
+	    	<label>Поставщик</label>
+	    </td>
+	   	<td>
+   			<label id="icon" for="name"><i class="fa fa-sitemap"></i></label>
+    		<input type="text" name="supplier" id="warehouse" placeholder="Поставщик" required/>
+	    </td>
+	    <td>
+	    	<label>Delivery Note</label>
+	    </td>
+	   	<td>
+		    <label id="icon" for="name"><i class="fa fa-sticky-note-o"></i></label>
+		    <input type="text" name="deliveryNote" id="warehouse" placeholder="как и пост" required/>
+	    </td>
+    </tr>
+
+    <tr>
+	    <td>
+	    	<label>Invoice IN</label>
+	    </td>
+	   	<td>
+		    <label id="icon" for="name"><i class="fa fa-file-o"></i></label>
+		    <input type="text" name="invoiceIn" id="warehouse" placeholder="Invoice IN" required/>
+	    </td>
+	    <td>
+	    	<label>Invoice OUT</label>
+	    </td>
+	   	<td>
+		    <label id="icon" for="name"><i class="fa fa-file-text"></i></label>
+		    <input type="text" name="invoiceIn" id="warehouse" class="red" placeholder="invoice OUT" required/>
+	    </td>
+    </tr>
+
+    <tr>
+	    <td>
+	    	<label>Parameters</label>
+	    </td>
+	   	<td>
+		    <label id="icon" for="name"><i class="fa fa-plus-square-o"></i></label>
+		    <input type="text" name="parameters" id="warehouse" placeholder="как и пост" required/>
+	    </td>
+	    <td></td><td></td>
+    </tr>
+
+    <tr><td></td><td colspan="2"><br><hr></td><td></td></tr>
+
+
+     <tr>
+	    <td>
+	    	<label>Курьер</label>
+	    </td>
+	    <td colspan="3">
+	    	<label id="icon" for="name"><i class="fa fa-bus"></i></label>
+    		<input type="text" name="courrier" id="warehouse" placeholder="Курьер" required/>
+	    </td>
+    </tr>
+
+    <tr>
+	    <td>
+	    	<label>Кол-во</label>
+	    </td>
+	   	<td>
+		    <label id="icon" for="name"><i class="fa fa-calculator"></i></label>
+		    <input type="ves" name="amount" id="amount" placeholder="X" required/>
+	    </td>
+	    <td rowspan="2" colspan="2">
+	    	<input type="radio" value="pallet" id="pallet" name="type">
+	      <label for="pallet" class="radio">Паллет</label><br>
+	      <input type="radio" value="box" id="box" name="type">
+	      <label for="box" class="radio">Коробка</label>
+	    </td>
+    </tr>
+
+   	<tr>
+	    <td>
+	    	Вес
+	    </td>
+	    <td>
+	    	<label id="icon" for="name"><i class="fa fa-tachometer"></i></label>
+   		  <input type="ves" name="invoiceIn" id="warehouse" class="small-input" placeholder="X" required/>
+	    </td>
+	    <td></td><td></td>
+    </tr>
+<!-- 
+    <tr>
+	    <td></td>
+	    <td></td>
+    </tr> -->
+
+
+
+    </table>
+    <br><br><br>
+
+<!-- 
+   <div>
     <label>Дата ухода</label>
     <label id="icon" for="name"><i class="fa fa-share-square-o"></i></i></label>
     <input type="text" name="name" id="name" placeholder="dateOut" required/><br></div>
@@ -95,7 +247,7 @@
       <label for="female" class="radio">Коробка</label>
 
       &nbsp;&nbsp;
-    </div>
+    </div> -->
 
     
     <a href="#" class="button">Сохранить   </a>
