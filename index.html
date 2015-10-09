@@ -26,6 +26,14 @@
 		    jQuery( '#dateIn' ).datepicker({
 		    	dateFormat: "dd.mm.yy"
 		    });
+		    $('#dateOut').datepicker({
+		    	dateFormat: "dd.mm.yy"
+		    });
+		    $('.mybtn').click(function(){
+		    	$('#dateOut').datepicker().datepicker("setDate", new Date());
+		    });
+		    jQuery('#dateIn').datepicker().datepicker("setDate", new Date());
+		    
 		    
 		   
 		  });
@@ -56,7 +64,7 @@
     			<input type="text" name="dateIn" id="dateIn" required/>
 	    </td>
 	    <td>
-	    	<label>Дата ухода</label>
+	    	<label>Дата ухода</label> <input type="button" name="mybtn" class="mybtn" value="today">
 	    </td>
 	   	<td>
     		<label id="icon" for="name"><i class="fa fa-share-square-o"></i></i></label>
@@ -73,6 +81,7 @@
 	   	<td>
 	    	<label id="icon" for="name"><i class="fa fa-user"></i></label>
 	    	<select type="select">
+	    		<option disabled>Выбери клиента</option>
 	    		<option>1 Саныч</option>
 	    		<option>2 Измайлов SVRT</option>
 	    		<option>3 Aktuelle</option>
