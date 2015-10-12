@@ -9,6 +9,20 @@ ol, ul, li {list-style:none}
 
 :focus {outline:none}
 
+
+.addTable {
+  padding: 10px;
+}
+
+.addTable tr, .addTable td {
+  padding: 0px;
+}
+
+.addTable label {
+  padding-left: 10px;
+  padding-bottom: -1px;
+  padding-top: 2px;
+}
 body,
 input,
 textarea,
