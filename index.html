@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/style2.css" rel="stylesheet">
-    <link href="css/chosen.min.css" rel="stylesheet">
+    <link href="css/chosen.css" rel="stylesheet">
 
 
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.9.1.custom.min.css" />
-                              <script type="text/javascript" src="js/jquery-1.8.2.js" charset="utf-8"></script>
-                              <script type="text/javascript" src="js/jquery-ui-1.9.1.custom.min.js" charset="utf-8"></script>
-                              <script type="text/javascript" src="js/jquery-ui-i18n.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.8.2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.1.custom.min.js" charset="utf-8"></script>
+                                <script type="text/javascript" src="js/chosen.jquery.min.js" charset="utf-8"></script>
 	  <script type="text/javascript" charset="utf-8">
 		  jQuery( document ).ready( function() {
 		    jQuery.datepicker.setDefaults (
@@ -35,8 +35,12 @@
 		    });
 		    jQuery('#dateIn').datepicker().datepicker("setDate", new Date());
 		    
-		    $(".client-select").chosen();
+		    
 		   
+		  });
+
+		  $(function() {
+		  	$(".client-select").chosen();
 		  });
 		 
 		 //  $( "#dateIn" ).datepicker({
@@ -82,16 +86,17 @@
 	   	<td>
 	    	<label id="icon" for="name"><i class="fa fa-user"></i></label>
 	    	<select type="select" class="client-select" data-placeholder="Выбери клиента">
-	    		<option>1 Саныч</option>
-	    		<option>2 Измайлов SVRT</option>
-	    		<option>3 Aktuelle</option>
-	   			<option>4 Ростов Monatech</option>
-	   			<option>5 АДК</option>
-	   			<option>6 Куваг</option>
-	   			<option>7 Леон</option>
-	   			<option>8 Куваг</option>
-	   			<option>9 Антон</option>
-	   			<option>0 Николай</option>
+	    		<option value="CC">1 Саныч / CC</option>
+	    		<option value="SVR">2 Измайлов SVR</option>
+	    		<option value="AKTL">3 Aktuelle</option>
+	   			<option value="RST">4 Ростов Monatech</option>
+	   			<option value="ADK">5 АДК / ADK</option>
+	   			<option value="CHINA">6 Куваг / Kuvag</option>
+	   			<option value="LEON">7 Леон / Leon</option>
+	   			<option value="ANT">8 Антон / Anton</option>
+	   			<option value="NKL">9 Николай</option>
+	   			<!-- <option value="">0 </option> -->
+	   			
 	   			<option>-- Добавить --</option>
     		</select>
 	    </td>
@@ -100,7 +105,7 @@
 	    </td>
 	   	<td>
     		<label id="icon" for="name"><i class="fa fa-cubes"></i></label>
-  		  <input type="text" name="warehouse" id="warehouse" placeholder="Sklad" value="ADK" required/>
+  		  <input type="text" name="warehouse" id="warehouse" value="ADK" required/>
 	    </td>
     </tr>
 
@@ -110,31 +115,32 @@
 	    </td>
 	   	<td>
    			<label id="icon" for="name"><i class="fa fa-sitemap"></i></label>
-    		<input type="text" name="supplier" id="warehouse" placeholder="Поставщик" required/>
+    		<input type="text" name="supplier" id="supplier" placeholder="Поставщик" required/>
 	    </td>
-	    <td>
-	    	<label>Delivery Note</label>
-	    </td>
-	   	<td>
-		    <label id="icon" for="name"><i class="fa fa-sticky-note-o"></i></label>
-		    <input type="text" name="deliveryNote" id="warehouse" placeholder="как и пост" required/>
-	    </td>
-    </tr>
-
-    <tr>
-	    <td>
+	     <td>
 	    	<label>Invoice IN</label>
 	    </td>
 	   	<td>
 		    <label id="icon" for="name"><i class="fa fa-file-o"></i></label>
-		    <input type="text" name="invoiceIn" id="warehouse" placeholder="Invoice IN" required/>
+		    <input type="text" name="invoiceIn" id="invoiceIn" placeholder=" IN" required/>
+	    </td>
+	   
+    </tr>
+
+    <tr>
+	     <td>
+	    	<label>Delivery Note</label>
+	    </td>
+	   	<td>
+		    <label id="icon" for="name"><i class="fa fa-sticky-note-o"></i></label>
+		    <input type="text" name="deliveryNote" id="deliveryNote" placeholder="note" required/>
 	    </td>
 	    <td>
 	    	<label>Invoice OUT</label>
 	    </td>
 	   	<td>
 		    <label id="icon" for="name"><i class="fa fa-file-text"></i></label>
-		    <input type="text" name="invoiceIn" id="warehouse" class="red" placeholder="invoice OUT" required/>
+		    <input type="text" name="invoiceOut" id="invoiceOut" class="red" placeholder=" OUT" required/>
 	    </td>
     </tr>
 
@@ -158,7 +164,7 @@
 	    </td>
 	    <td colspan="3">
 	    	<label id="icon" for="name"><i class="fa fa-bus"></i></label>
-    		<input type="text" name="courrier" id="warehouse" placeholder="Курьер" required/>
+    		<input type="text" name="courrier" id="courrier" placeholder="Курьер" required/>
 	    </td>
     </tr>
 
@@ -184,7 +190,7 @@
 	    </td>
 	    <td>
 	    	<label id="icon" for="name"><i class="fa fa-tachometer"></i></label>
-   		  <input type="ves" name="invoiceIn" id="warehouse" class="small-input" placeholder="X" required/>
+   		  <input type="ves" name="invoiceIn" id="warehouse" class="small-input" placeholder="X kg" required/>
 	    </td>
 	    <td></td><td></td>
     </tr>
@@ -198,8 +204,6 @@
 
     </table>
     <br><br><br>
-
-<script src="js/chosen.query.min.js"
 
     
     <a href="#" class="button">Сохранить   </a>
